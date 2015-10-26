@@ -10,14 +10,9 @@ module CitybikesApi
   #
   def self.networks
     response = HTTParty.get("#{BASE_URL}/networks")
-    return response["networks"]
   end
 
-  def self.network(tag)
-    #code http://api.citybik.es/v2/networks/capital-bikeshare
-  end
-
-  def self.network_stations(network_tag)
-    #code http://api.citybik.es/v2/networks/capital-bikeshare?fields=stations
+  def self.network(network_id)
+    response = HTTParty.get("#{BASE_URL}/networks/#{network_id}")
   end
 end

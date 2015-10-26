@@ -8,20 +8,23 @@ describe CitybikesApi do
   describe '#networks' do
     it "should return an array of network objects" do
       response = CitybikesApi.networks
-      expect(response).to be_kind_of(Array)
-      expect(response[0]).to be_kind_of(Hash)
+      expect(response["networks"]).to be_kind_of(Array)
+      expect(response["networks"][0]).to be_kind_of(Hash)
     end
   end
 
   describe '#network' do
-    it "should return a network object" do
-      pending
-    end
-  end
+    let(:network_id){"capital-bikeshare"}
 
-  describe '#network_stations' do
+    it "should return a network object" do
+      response = CitybikesApi.network(network_id)
+      expect(response["network"]).to be_kind_of(Hash)
+    end
+
     it "should return an array of station objects" do
-      pending
+      response = CitybikesApi.network(network_id)
+      expect(response["network"]["stations"]).to be_kind_of(Array)
+      expect(response["network"]["stations"][0]).to be_kind_of(Hash)
     end
   end
 end

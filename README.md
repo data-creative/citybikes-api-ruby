@@ -15,19 +15,16 @@ gem install citybikes_api
 Get a list of all bike-share networks.
 
 ```` rb
-CitybikesApi.networks
+response = CitybikesApi.networks
+puts response["networks"]
 ````
 
-Find a bike-share network by its `tag`.
+Find a given bike-share network and all of its stations.
 
 ```` rb
-CitybikesApi.network(tag)
-````
-
-List all stations for a given network tag.
-
-```` rb
-CitybikesApi.network_stations(network_tag)
+response = CitybikesApi.network(network_id)
+puts response["network"]
+puts response["network"]["stations"]
 ````
 
 ## Contributing
