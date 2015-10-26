@@ -7,7 +7,9 @@ describe CitybikesApi do
 
   describe '#networks' do
     it "should return an array of network objects" do
-      pending
+      response = CitybikesApi.networks
+      expect(response).to be_kind_of(Array)
+      expect(response[0]).to be_kind_of(Hash)
     end
   end
 
