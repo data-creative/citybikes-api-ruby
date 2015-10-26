@@ -1,6 +1,9 @@
 # CitybikesApi - Ruby
 
-A ruby interface to the [CityBikes API](http://api.citybik.es/v2/) (v2). Includes endpoints for bike-share network and station data.
+A ruby interface to the [CityBikes API](http://api.citybik.es/v2/) (v2).
+ Includes endpoints for bike-share network and station data.
+
+[![Gem Version](https://badge.fury.io/rb/citybikes_api.svg)](https://badge.fury.io/rb/citybikes_api)
 
 ## Installation
 

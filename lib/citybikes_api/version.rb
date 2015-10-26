@@ -1,3 +1,4 @@
 module CitybikesApi
-  VERSION = "0.1.0"
+  # The major version of this gem should correspond to the citybikes api version.
+  VERSION = "2.0.0"
 end
