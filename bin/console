@@ -10,5 +10,8 @@ require "citybikes_api"
 # require "pry"
 # Pry.start
 
-require "irb"
-IRB.start
+# require "irb"
+# IRB.start
+
+require 'pry'
+Pry.start

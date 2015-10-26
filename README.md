@@ -1,37 +1,53 @@
-# CitybikesApi
+# CitybikesApi - Ruby
 
-A ruby interface to the CityBikes API.
+A ruby interface to the [CityBikes API](http://api.citybik.es/v2/). Includes endpoints for bike-share network and station data.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add `gem 'citybikes_api', '~> 2.0'` to Gemfile and run `bundle install`. Or install with:
 
-```ruby
-gem 'citybikes_api'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install citybikes_api
+```` sh
+gem install citybikes_api
+````
 
 ## Usage
 
-TODO: Write usage instructions here
+Get a list of all bike-share networks.
 
-## Development
+```` rb
+CitybikesApi.networks
+````
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake rspec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+Find a bike-share network by its `tag`.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```` rb
+CitybikesApi.network(tag)
+````
+
+List all stations for a given network tag.
+
+```` rb
+CitybikesApi.network_stations(network_tag)
+````
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/citybikes_api.
+Browse existing [issues](https://github.com/data-creative/citybikes-api-ruby/issues) or create a new issue to communicate bugs, desired features, etc.
 
-## License
+After forking the repo and pushing your changes, create a pull request referencing the applicable issue(s).
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+### Developing
+
+After checking out the repo, run `bin/setup` to install dependencies.
+
+### Testing
+
+Run `rake rspec` or `bundle exec rspec spec/` to run the tests.
+
+You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+
+### Releasing
+
+To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+
+## [License](LICENSE.txt)
