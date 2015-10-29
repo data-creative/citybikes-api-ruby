@@ -1,9 +1,8 @@
-# CityBikes API - Ruby
+# CityBikes API - Ruby :bike: :bike: :bike:
 
 A ruby interface to the [CityBikes API](http://api.citybik.es/v2/) v2.
  Returns data about bike-share networks and stations.
  Includes options to customize API requests.
-  :bike: :bike:
 
 [![Gem Version](https://badge.fury.io/rb/citybikes_api.svg)](https://badge.fury.io/rb/citybikes_api)
 
