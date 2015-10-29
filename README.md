@@ -1,7 +1,9 @@
-# CitybikesApi - Ruby
+# CityBikes API - Ruby
 
-A ruby interface to the [CityBikes API](http://api.citybik.es/v2/) (v2).
- Includes endpoints for bike-share network and station data.
+A ruby interface to the [CityBikes API](http://api.citybik.es/v2/) v2.
+ Returns data about bike-share networks and stations.
+ Includes options to customize API requests.
+  :bike: :bike:
 
 [![Gem Version](https://badge.fury.io/rb/citybikes_api.svg)](https://badge.fury.io/rb/citybikes_api)
 
@@ -15,20 +17,45 @@ gem install citybikes_api
 
 ## Usage
 
-Get a list of all bike-share networks.
+### Requests
+
+#### Networks Endpoint
+
+List all bike-share networks.
 
 ```` rb
 response = CitybikesApi.networks
-puts response["networks"]
+puts response["networks"] #=> returns an Array of Hash objects
 ````
 
-Find a given bike-share network and all of its stations.
+#### Network Endpoint
+
+Find a bike-share network by its CityBikes identifier.
 
 ```` rb
+network_id = "capital-bikeshare"
 response = CitybikesApi.network(network_id)
-puts response["network"]
-puts response["network"]["stations"]
+puts response["network"] #=> returns a Hash object
 ````
+
+### Request Options
+
+Customize any network request by passing URL parameters.
+
+```` rb
+request_options = {:fields => "id,name,href"}
+response = CitybikesApi.networks(request_options)
+puts response["networks"] #=> returns an Array of Hash objects, each of which should only contain the requested fields/attributes
+````
+
+```` rb
+network_id = "capital-bikeshare"
+request_options = {:fields => "id,name,href"}
+response = CitybikesApi.network(network_id, request_options)
+puts response["network"] #=> returns a Hash object which should only contain the requested fields/attributes
+````
+
+See [CityBikes documentation](http://api.citybik.es/v2/#Syntax) for more info about field-filtering.
 
 ## Contributing
 

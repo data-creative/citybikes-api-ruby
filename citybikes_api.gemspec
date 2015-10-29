@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["MJ Rossetti (@s2t2)"]
   spec.email         = ["s2t2mail+git@gmail.com"]
 
-  spec.summary       = %q{A ruby interface to the CityBikes API (v2). Includes endpoints for bike-share network and station data.}
-  spec.description   = %q{A ruby interface to the CityBikes API (v2). Includes endpoints for bike-share network and station data.}
+  spec.summary       = %q{A ruby interface to the CityBikes API v2. Returns data about bike-share networks and stations. Includes options to customize API requests.}
+  spec.description   = %q{A ruby interface to the CityBikes API v2. Returns data about bike-share networks and stations. Includes options to customize API requests.}
   spec.homepage      = "https://github.com/data-creative/citybikes-api-ruby"
   spec.license       = "MIT"
 
